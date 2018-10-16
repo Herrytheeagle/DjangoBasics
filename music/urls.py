@@ -1,10 +1,10 @@
-from django.urls import path, re_path
+from django.conf.urls import url
 from . import views
 
 urlpatterns = [
     # /music/
-    path('', views.index, name='index'),
+    url(r'^$', views.index, name='index'),
 
     # /music/712/
-    re_path(r'^(?p<album_id>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'),
 ]
