@@ -11,4 +11,8 @@ def index(request):
 
 
 def detail(request, album_id):
-    return HttpResponse("<h2>Details for Album id: " + str(album_id) + "</h2>")
+    try:
+        album = Album.objects.get(pk=album_id)
+    except Album.DoesNotExist:
+        raise Http404("Album does not exist")
+
