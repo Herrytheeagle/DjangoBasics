@@ -1,7 +1,7 @@
 <img src="{{ album.album_logo }}">
 
 <h1>{{ album.album_title }}</h1>
-<h3>{{ artist }}</h3>
+<h3>{{ album.artist }}</h3>
 
 <ul>
     {% for song in album.song_set.all %}
