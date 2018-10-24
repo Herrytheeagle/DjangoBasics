@@ -4,5 +4,7 @@
 <h3>{{ artist }}</h3>
 
 <ul>
-    <li></li>
+    {% for song in album.song_set.all %}
+        <li>{{ song.song_title }} - {{ song.file_type }}</li>
+    {% endfor %}
 </ul>
